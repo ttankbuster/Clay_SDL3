@@ -3,6 +3,7 @@ project(CLAY_SDL3)
 add_executable(CLAY_SDL3)
 target_sources(CLAY_SDL3 PRIVATE main.c)
 add_subdirectory(external)
+target_link_libraries(CLAY_SDL3 PRIVATE external)
 add_custom_command(
         TARGET CLAY_SDL3 POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
